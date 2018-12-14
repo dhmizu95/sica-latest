@@ -55,9 +55,9 @@ ChannelEmu::GetTypeId (void)
     //                RandomVariable (CreateObject<ExponentialRandomVariable>(2,8)),  // ns-3.25
     //                MakeRandomVariableAccessor (&ChannelEmu::m_nextTime),
     //                MakeRandomVariableChecker ())
-    .AddTraceSource ("StatusChanged", 
-                     "Trace source indicating status changes",
-                     MakeTraceSourceAccessor (&ChannelEmu::m_statusChanged))
+    // .AddTraceSource ("StatusChanged", 
+    //                  "Trace source indicating status changes",
+    //                  MakeTraceSourceAccessor (&ChannelEmu::m_statusChanged))
     ;
   return tid;
 }
