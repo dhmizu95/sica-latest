@@ -1005,7 +1005,7 @@ Sica::ScheduleSwitchRInterface()
   Ptr<WifiPhy> wifiphy = rInterface->GetPhy();
   Time delayToIdle = MilliSeconds(0);
   // if (wifiphy->IsStateBusy()){
-  if (wifiphy->IsStateCcaBusy()){
+  if (!wifiphy->IsStateIdle()){
     delayToIdle= wifiphy->GetDelayUntilIdle();	
     NS_LOG_DEBUG ( "Sica node " << m_id <<" :"<< "Phy is busy to switch it would be idel after " <<delayToIdle.GetMicroSeconds() );
   }
@@ -1041,7 +1041,7 @@ Sica::SwitchTInterface(uint32_t c)
   if (wifiphy->GetChannelNumber()== c)
     return true;
   // if (wifiphy->IsStateBusy())
-  if (wifiphy->IsStateCcaBusy())
+  if (!wifiphy->IsStateIdle())
     return false;
   // Change the channel of the Tinterface
   wifiphy->SetChannelNumber(c);
