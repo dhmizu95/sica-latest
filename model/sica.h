@@ -592,7 +592,7 @@ private:
   SicaQueue m_queue;      ///< Queues for hello  and data message
   SicaChannels m_channel; ///< Channels' information
   ChannelEmuContainer m_channelEmuObjects;//< Channels emulation objects
-  WifiPhy::RxErrorCallback errorCallback;
+  RxErrorCallback errorCallback;
   //\}
   
 };
