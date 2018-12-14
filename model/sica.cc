@@ -929,7 +929,8 @@ Sica::EstimateTxDuration(uint32_t pSize,Ptr<WifiPhy> wifiphy)
   WifiTxVector txVector;
   txVector.SetMode (WifiPhy::GetDsssRate11Mbps ());
   // Time txEstimation=wifiphy->CalculateTxDuration(pSize,wifiphy->GetMode(0), (WifiPreamble)WIFI_PREAMBLE_SHORT);
-  Time txEstimation=wifiphy->CalculateTxDuration(pSize, txVector, (WifiPreamble)WIFI_PREAMBLE_SHORT, wifiphy->GetFrequency());
+  // Time txEstimation=wifiphy->CalculateTxDuration(pSize, txVector, wifiphy->GetFrequency(), (WifiPreamble)WIFI_PREAMBLE_SHORT, 0);
+  Time txEstimation=wifiphy->CalculateTxDuration(pSize, txVector, wifiphy->GetFrequency());
   
   return (txEstimation);
 }
