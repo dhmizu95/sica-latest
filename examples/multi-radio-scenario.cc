@@ -458,7 +458,8 @@ int main (int argc, char *argv[])
  // set the first channel for physical layer
   wifiPhy.SetChannel (wifiChannel.Create ());
   // Add a non-QoS upper mac, and disable rate control
-  NqosWifiMacHelper wifiMac = NqosWifiMacHelper::Default ();
+  // NqosWifiMacHelper wifiMac = NqosWifiMacHelper::Default ();
+  NqosWifiMacHelper wifiMac = NqosWifiMacHelper();
   wifi.SetRemoteStationManager ("ns3::ConstantRateWifiManager");
   // Set it to adhoc mode
   wifiMac.SetType ("ns3::AdhocWifiMac");
