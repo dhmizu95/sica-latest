@@ -1,3 +1,3 @@
 Semi-dynamic Interference aware Channel Assignment (SICA)
 
-It's Working on NS-3.14
+It's Working on NS-3.25
